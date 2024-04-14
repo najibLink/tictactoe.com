@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&displayswap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: darkolivegreen;
+}
+
+.select-box,
+.play-board,
+.result-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+.select-box {
+  background: whitesmoke;
+  padding: 20px 25px 25px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.select-box.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.select-box header {
+  font-size: 25px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.select-box .title {
+  font-size: 15px;
+  margin: 20px 0px;
+}
+
+.select-box .option {
+  display: flex;
+}
+
+.option button {
+  height: 45px;
+  width: 100%;
+  font-size: 15px;
+  padding: 5px;
+  border: none;
+  background: darkolivegreen;
+  border-radius: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option button.playerX {
+  margin-right: 5px;
+}
+
+.option button.playerO {
+  margin-left: 5px;
+}
+
+.option button:hover,
+.result-box .button button:hover {
+  transform: scale(0.95);
+}
+
+.play-board .details {
+  background: whitesmoke;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.play-board section {
+  display: flex;
+}
+
+.play-board section span {
+  display: block;
+  margin: 3px;
+  height: 100px;
+  width: 100px;
+  background: whitesmoke;
+  border-radius: 5px;
+  font-size: 50px;
+  text-align: center;
+  line-height: 100px;
+  color: darkolivegreen;
+}
+
+.play-board .play-area {
+  margin-top: 10px;
+}
+
+.play-board .details .player {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+}
+
+.play-board .details span {
+  width: 100%;
+  color: darkolivegreen;
+  border-radius: 5px;
+  padding: 10px 0px;
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  transition: 0.3s;
+}
+
+.details .slider {
+  background: darkolivegreen;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  border-radius: 5px;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+.details span:first-child {
+  color: whitesmoke;
+}
+
+.play-board {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.play-board.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.result-box {
+  background: whitesmoke;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 350px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.result-box.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.result-box .won-text {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.result-box .won-text p {
+  font-weight: 700;
+  margin: 0px 5px;
+}
+
+.result-box .button {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.result-box .button button {
+  font-size: 15px;
+  padding: 5px 20px;
+  border: none;
+  background: darkolivegreen;
+  border-radius: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.player.active span:first-child {
+  color: darkolivegreen;
+}
+.player.active span:nth-child(2) {
+  color: whitesmoke;
+}
+.player.active .slider {
+  left: 50%;
+}
